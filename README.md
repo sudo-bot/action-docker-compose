@@ -6,8 +6,6 @@ You can find the image on [Docker Hub](https://hub.docker.com/r/botsudo/action-d
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/botsudo/action-docker-compose.svg)](https://hub.docker.com/r/botsudo/action-docker-compose)
 
-You can find the image on [Docker Hub](https://hub.docker.com/r/botsudo/action-docker-compose)
-
 I use the base image [docker/compose](https://hub.docker.com/r/docker/compose) for this action
 
 ## Example usage
