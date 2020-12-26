@@ -1,0 +1,12 @@
+name: run docker-compose
+on: [push]
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: run docker-compose
+              uses: sudo-bot/action-docker-compose@latest
+              with:
+                  cli-args: "--version"
