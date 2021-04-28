@@ -20,9 +20,7 @@ jobs:
         - name: Build action image
           run: IMAGE_TAG="docker.io/botsudo/action-docker-compose:latest" make docker-build
 
-        - name: Push to Docker hub
-          run: docker push docker.io/botsudo/action-docker-compose:latest
-        - name: Sign docker image
+        - name: Sign and push docker image
           uses: sudo-bot/action-docker-sign@latest
           with:
             image-ref: "docker.io/botsudo/action-docker-compose:latest"
