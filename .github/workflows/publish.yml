@@ -22,9 +22,9 @@ jobs:
         - name: Push to Docker hub
           run: docker push docker.io/botsudo/action-docker-compose:latest
         - name: Sign docker image
-            uses: sudo-bot/action-docker-sign@latest
-            with:
-                image-ref: "docker.io/botsudo/action-docker-compose:latest"
-                private-key-id: "${{ secrets.DOCKER_PRIVATE_KEY_ID }}"
-                private-key: ${{ secrets.DOCKER_PRIVATE_KEY }}
-                private-key-passphrase: ${{ secrets.DOCKER_PRIVATE_KEY_PASSPHRASE }}
+          uses: sudo-bot/action-docker-sign@latest
+          with:
+            image-ref: "docker.io/botsudo/action-docker-compose:latest"
+            private-key-id: "${{ secrets.DOCKER_PRIVATE_KEY_ID }}"
+            private-key: ${{ secrets.DOCKER_PRIVATE_KEY }}
+            private-key-passphrase: ${{ secrets.DOCKER_PRIVATE_KEY_PASSPHRASE }}
