@@ -9,11 +9,4 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: Build action image
-              run: IMAGE_TAG="botsudo/action-docker-compose:latest" make docker-build
-            - name: Checkout repository
-              uses: sudo-bot/action-docker-sign@latest
-              with:
-                  image-ref: "botsudo/action-docker-compose:latest"
-                  private-key-id: "46afe37834b3f7f7f76f5f9cfb77d7a8a3383353581cdf74236dcf43df0260e4"
-                  private-key: ${{ secrets.DOCKER_PRIVATE_KEY }}
-                  private-key-passphrase: ${{ secrets.DOCKER_PRIVATE_KEY_PASSPHRASE }}
+              run: make docker-build
