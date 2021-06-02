@@ -1,6 +1,6 @@
-FROM docker/compose:alpine-1.28.0-rc1
+FROM docker/compose:alpine-1.29.2
 
-ARG RELEASE_VERSION=alpine-1.28.0-rc1
+ARG RELEASE_VERSION=alpine-1.29.2
 
 # Metadata params
 ARG VCS_REF
