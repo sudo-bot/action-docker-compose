@@ -1,6 +1,6 @@
 IMAGE_TAG ?= action-docker-compose
 
-# All: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+# All: linux/amd64,linux/arm64/v8,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
 PLATFORM ?= linux/amd64
 
 ACTION ?= load

@@ -11,7 +11,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                # Base image only has amd64
+                # The docker official image only has amd64 and arm64/v8
                 platform: ["linux/amd64"]
         steps:
             - name: Checkout repository
@@ -23,6 +23,7 @@ jobs:
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v1
             - name: Build action image
-              run: PLATFORM="${{ matrix.platform }}" make docker-build
+              run: make docker-build
               env:
                 DOCKER_BUILDKIT: 1
+                PLATFORM: ${{ matrix.platform }}
