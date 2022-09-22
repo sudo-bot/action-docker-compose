@@ -1,5 +1,8 @@
 name: Build docker image
 
+permissions:
+    contents: read
+
 on: [push]
 
 jobs:
@@ -12,7 +15,7 @@ jobs:
                 platform: ["linux/amd64"]
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             # https://github.com/docker/setup-qemu-action
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v1

@@ -11,7 +11,7 @@ I use the base image [docker/compose](https://hub.docker.com/r/docker/compose) f
 ## Example usage
 
 ```yml
-  - uses: actions/checkout@v2
+  - uses: actions/checkout@v3
   - name: run docker-compose
     uses: sudo-bot/action-docker-compose@latest
     with:
