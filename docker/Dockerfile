@@ -1,13 +1,12 @@
-FROM docker/compose:alpine-1.29.2
+FROM alpine:3.16
 
-ARG RELEASE_VERSION=alpine-1.29.2
+# ARG RELEASE_VERSION=2
 
 # Metadata params
 ARG VCS_REF
 ARG BUILD_DATE
 
-RUN apk add --no-cache --update make bash
-
+COPY --from=docker /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 COPY entrypoint.sh /entrypoint.sh
 
 # Metadata
@@ -15,7 +14,7 @@ LABEL org.label-schema.vendor="Sudo-Bot" \
     org.label-schema.url="https://github.com/docker/compose#readme" \
     org.label-schema.name="docker-compose action" \
     org.label-schema.description="docker-compose action for GitHub actions" \
-    org.label-schema.version=${RELEASE_VERSION} \
+    # org.label-schema.version=${RELEASE_VERSION} \
     org.label-schema.vcs-url="https://github.com/docker/compose.git" \
     org.label-schema.vcs-ref=${VCS_REF} \
     org.label-schema.build-date=${BUILD_DATE} \

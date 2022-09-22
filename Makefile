@@ -6,7 +6,7 @@ PLATFORM ?= linux/amd64
 ACTION ?= load
 PROGRESS_MODE ?= plain
 
-.PHONY: update-tags docker-build docker-push
+.PHONY: update-tags docker-build docker-push docker-test
 
 docker-build:
 	# https://github.com/docker/buildx#building
@@ -21,6 +21,9 @@ docker-build:
 
 docker-push:
 	docker push $(IMAGE_TAG)
+
+docker-test:
+	docker run --rm $(IMAGE_TAG) --version
 
 update-tags:
 	git checkout main
