@@ -3,4 +3,5 @@ version: "3.3"
 services:
     sut:
         build: .
+        entrypoint: /usr/bin/docker-compose
         command: "--version"
