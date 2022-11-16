@@ -4,7 +4,7 @@
 # @author William Desportes <williamdes@wdes.fr>
 ##
 
-set -e
+set -eu
 
 CLI_ARGS="$@"
 
