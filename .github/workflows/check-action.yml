@@ -6,7 +6,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - name: run docker-compose
+            - name: fetch the version
               uses: sudo-bot/action-docker-compose@latest
               with:
                   cli-args: "--version"
+            - name: try to pull an image
+              uses: sudo-bot/action-docker-compose@latest
+              with:
+                  cli-args: "pull alpine:3.16"
