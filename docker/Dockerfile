@@ -7,6 +7,7 @@ ARG VCS_REF
 ARG BUILD_DATE
 
 COPY --from=docker /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+COPY entrypoint.sh /entrypoint.sh
 
 # Metadata
 LABEL org.label-schema.vendor="Sudo-Bot" \
