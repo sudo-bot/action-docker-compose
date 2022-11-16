@@ -1,0 +1,6 @@
+version: "3.3"
+
+services:
+    sut:
+        image: alpine:3.16
+        command: 'echo "image works";'

@@ -13,4 +13,8 @@ jobs:
             - name: try to pull an image
               uses: sudo-bot/action-docker-compose@latest
               with:
-                  cli-args: "pull alpine:3.16"
+                  cli-args: "-f .github/data/docker-compose-latest.test.yml pull"
+            - name: try to pull an image
+              uses: sudo-bot/action-docker-compose@latest
+              with:
+                  cli-args: "-f .github/data/docker-compose-latest.test.yml up --exit-code-from=sut --abort-on-container-exit"
