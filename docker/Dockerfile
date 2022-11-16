@@ -18,5 +18,3 @@ LABEL org.label-schema.vendor="Sudo-Bot" \
     org.label-schema.vcs-ref=${VCS_REF} \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.docker.schema-version="1.0"
-
-ENTRYPOINT ["/usr/bin/docker-compose"]
