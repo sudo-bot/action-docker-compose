@@ -14,7 +14,11 @@ jobs:
               uses: sudo-bot/action-docker-compose@latest
               with:
                   cli-args: "-f .github/data/docker-compose-latest.test.yml pull"
-            - name: try to pull an image
+            - name: try to compose up
               uses: sudo-bot/action-docker-compose@latest
               with:
                   cli-args: "-f .github/data/docker-compose-latest.test.yml up --exit-code-from=sut --abort-on-container-exit"
+            - name: try to compose down
+              uses: sudo-bot/action-docker-compose@latest
+              with:
+                  cli-args: "-f .github/data/docker-compose-latest.test.yml down"
