@@ -1,8 +1,10 @@
-name: run docker-compose
+name: check action works
+
 on: [push]
 
 jobs:
     check:
+        name: Test the action
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
