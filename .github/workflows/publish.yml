@@ -32,6 +32,8 @@ jobs:
           uses: sudo-bot/action-docker-sign@latest
           with:
             image-ref: "docker.io/botsudo/action-docker-compose:latest"
+            # Sign the manifest
+            sign-manifest: true
             private-key-id: "${{ vars.DOCKER_PRIVATE_KEY_ID }}"
             private-key: ${{ secrets.DOCKER_PRIVATE_KEY }}
             private-key-passphrase: ${{ secrets.DOCKER_PRIVATE_KEY_PASSPHRASE }}
