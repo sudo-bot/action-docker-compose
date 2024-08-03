@@ -12,6 +12,8 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker hub
     runs-on: ubuntu-latest
+    environment:
+        name: Build Docker images
     steps:
         - name: Check out the repository
           uses: actions/checkout@v4
@@ -30,6 +32,7 @@ jobs:
           uses: sudo-bot/action-docker-sign@latest
           with:
             image-ref: "docker.io/botsudo/action-docker-compose:latest"
-            private-key-id: "${{ secrets.DOCKER_PRIVATE_KEY_ID }}"
+            private-key-id: "${{ vars.DOCKER_PRIVATE_KEY_ID }}"
             private-key: ${{ secrets.DOCKER_PRIVATE_KEY }}
             private-key-passphrase: ${{ secrets.DOCKER_PRIVATE_KEY_PASSPHRASE }}
+            private-key-name: "${{ vars.DOCKER_PRIVATE_KEY_NAME }}"

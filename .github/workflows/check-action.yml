@@ -1,5 +1,8 @@
 name: check action works
 
+permissions:
+    contents: read
+
 on: [push]
 
 jobs:
