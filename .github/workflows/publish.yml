@@ -33,6 +33,7 @@ jobs:
           run: make docker-build
           env:
             IMAGE_TAG: "docker.io/botsudo/action-docker-compose:latest"
+            # In 12/2025 the "latest" tag does not have support for linux/riscv64
             PLATFORM: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
             ACTION: push
 
